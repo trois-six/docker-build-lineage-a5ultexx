@@ -11,7 +11,7 @@ Edit your settings (user, group, github email, github username, uid, gid, MAKEFL
     docker build -t docker-build-lineage-a5ultexx:latest .
 
 ## Run
-    mkdir -p $(pwd)/../lineage/{android,ccache} && docker run -v $(pwd)/../lineage/android:/home/builder/android -v $(pwd)/ccache:/home/builder/ccache --name lineage_build_$(date "+%s") debtroissixbuildlineage:latest
+    mkdir -p $(pwd)/../lineage/{android,ccache} && docker run -v $(pwd)/../lineage/android:/home/builder/android -v $(pwd)/ccache:/home/builder/ccache --name lineage_a5ultexx_$(date "+%s") docker-build-lineage-a5ultexx:latest
 
 ## Cleanup old exited containers
     docker rm -v `docker ps -q -f status=exited`
