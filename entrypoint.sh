@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 # Set-Up ccache
 ccache -M 50G
 
@@ -32,7 +34,7 @@ cat > .repo/local_manifests/roomservice.xml << __EOF__
 __EOF__
 
 # Download the source code
-repo sync ${MAKEFLAGS}
+repo sync ${MAKEFLAGS:-}
 
 # Prepare the device-specific code
 . build/envsetup.sh
