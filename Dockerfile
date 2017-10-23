@@ -24,10 +24,10 @@ RUN groupadd -g ${gid} ${group} && \
     useradd -u ${uid} -g ${gid} --home ${home} -m -s /bin/bash ${user}
 
 # Build environment variables
-ENV USE_CCACHE 1
-ENV CCACHE_COMPRESS 1
+ENV USE_CCACHE ${USE_CCACHE:-1}
+ENV CCACHE_COMPRESS ${CCACHE_COMPRESS:-1}
 ENV CCACHE_DIR ${home}/ccache
-ENV MAKEFLAGS -j32
+ENV MAKEFLAGS ${MAKEFLAGS:--j1}
 RUN git config --global user.email "${gitemail}" && \
     git config --global user.name "${gituser}" && \
     git config --global color.ui true
