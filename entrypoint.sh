@@ -50,7 +50,7 @@ repo sync --force-sync ${MAKEFLAGS:-}
 
 # Some needed commits haven't been pushed to lineage repos, yet. Let's repopick them, then
 # Script can be found here http://msm8916.com/~vincent/repopicks.sh
-curl -qs http://msm8916.com/~vincent/repopicks.sh -o repopicks.sh && chmod u+x repopicks.sh
+curl -qs https://msm8916.com/~vincent/repopicks.sh -o repopicks.sh && chmod u+x repopicks.sh
 ./repopicks.sh
 
 # Temporary remove disable AudioFX build: it crashes ad cause reboots in 8.1. Will be re-enabled later when gets stable
